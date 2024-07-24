@@ -1,4 +1,4 @@
-// Função para validar o texto
+// Função para validar o textocxvc
 function validarTexto(texto) {
     const regex = /^[a-z\s]*$/;
     return regex.test(texto);
