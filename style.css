@@ -30,9 +30,13 @@ main {
     width: 70%;
     padding: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
 }
 
-.content__title{
+.content__title {
     color: #0A3871;
 }
 
@@ -42,7 +46,7 @@ aside {
     background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 h1 {
@@ -60,19 +64,13 @@ h1 {
 .message {
     color: #888;
     margin-bottom: 20px;
-    position: absolute;
-    bottom: 80px;
-    left: 20px;
 }
 
 .buttons {
     display: flex;
     justify-content: left;
     gap: 20px;
-    position: absolute;
-    bottom: 20px;
-    left: 27%;
-    transform: translateX(-50%);
+    margin-top: auto;
 }
 
 .btn {
@@ -85,6 +83,11 @@ h1 {
     border-radius: 15px;
     transition: background-color 0.3s;
 }
+
+.btn:hover {
+    background-color: #083a6c;
+}
+
 .text-input {
     width: 100%;
     padding: 20px;
@@ -93,4 +96,17 @@ h1 {
     font-size: 16px;
     height: 100px;
     box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Estilo para ocultar a imagem */
+.side-image-hidden {
+    display: none;
+}
+
+/* Estilo para a mensagem exibida */
+.message-displayed {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
 }

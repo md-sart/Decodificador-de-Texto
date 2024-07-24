@@ -14,15 +14,15 @@
         <div class="content">
             <h1 class="content__title">Digite seu texto</h1>
             <p class="message">Apenas letras minúsculas e sem acento</p>
+            <textarea class="text-input" placeholder="Digite um texto que você deseja criptografar ou descriptografar"></textarea>
             <div class="buttons">
                 <button class="btn" id="encryptBtn">Criptografar</button>
                 <button class="btn" id="decryptBtn">Descriptografar</button>
             </div>
         </div>
         <aside>
-            <img src="assets/crianca-lupa.jpg" alt="Imagem Descrição" class="side-image">
-            <h2>Nenhuma mensagem encontrada</h2>
-            <input type="text" placeholder="Digite um texto que você deseja criptografar ou descriptografar" class="text-input">
+            <img src="assets/crianca-lupa.jpg" alt="Imagem Descrição" class="side-image" id="sideImage">
+            <h2 id="sideMessage">Nenhuma mensagem encontrada</h2>
         </aside>
     </main>
     <script src="script.js"></script>
