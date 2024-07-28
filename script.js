@@ -1,4 +1,4 @@
-// Função para validar o textocxvc
+// Função para validar o texto
 function validarTexto(texto) {
     const regex = /^[a-z\s]*$/;
     return regex.test(texto);
@@ -33,12 +33,18 @@ function mostrarTexto(texto) {
     sideImage.style.display = 'none';
     sideMessage.textContent = texto;
     sideMessage.classList.add('message-displayed');
+
+    // Habilitar botões após mostrar o texto
+    copyBtn.disabled = false;
+    clearBtn.disabled = false;
 }
 
 // Captura dos botões e input
 const encryptBtn = document.getElementById('encryptBtn');
 const decryptBtn = document.getElementById('decryptBtn');
 const textInput = document.querySelector('.text-input');
+const copyBtn = document.getElementById('copyBtn');
+const clearBtn = document.getElementById('clearBtn');
 
 // Adiciona eventos aos botões
 encryptBtn.addEventListener('click', () => {
@@ -59,4 +65,30 @@ decryptBtn.addEventListener('click', () => {
     } else {
         alert('O texto deve conter apenas letras minúsculas e sem acentos.');
     }
+});
+
+// Função para copiar texto
+copyBtn.addEventListener('click', () => {
+    const textoParaCopiar = document.getElementById('sideMessage').textContent;
+    navigator.clipboard.writeText(textoParaCopiar)
+        .then(() => {
+            alert('Texto copiado para a área de transferência!');
+        })
+        .catch(err => {
+            console.error('Erro ao copiar texto: ', err);
+        });
+});
+
+// Função para limpar texto
+clearBtn.addEventListener('click', () => {
+    textInput.value = '';
+    const sideImage = document.getElementById('sideImage');
+    const sideMessage = document.getElementById('sideMessage');
+    sideImage.style.display = 'block';
+    sideMessage.textContent = 'Nenhuma mensagem encontrada';
+    sideMessage.classList.remove('message-displayed');
+
+    // Desabilitar botões após limpar o texto
+    copyBtn.disabled = true;
+    clearBtn.disabled = true;
 });
